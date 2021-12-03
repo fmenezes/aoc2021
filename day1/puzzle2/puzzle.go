@@ -34,7 +34,7 @@ func Run() error {
 				sum[j] += intLine
 			}
 
-			if count[j] == 3 {
+			if count[j] == len(count) {
 				if lastSum > 0 && sum[j] > lastSum {
 					c += 1
 				}
