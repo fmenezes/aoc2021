@@ -1,3 +1,3 @@
-module github.com/fmenezes/adventofcode2021
+module github.com/fmenezes/aoc2021
 
 go 1.17
