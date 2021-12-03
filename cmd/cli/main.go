@@ -6,10 +6,10 @@ import (
 	"fmt"
 	"log"
 
-	d1p1 "github.com/fmenezes/aoc2021/day1/puzzle1"
-	d1p2 "github.com/fmenezes/aoc2021/day1/puzzle2"
-	d2p1 "github.com/fmenezes/aoc2021/day2/puzzle1"
-	d2p2 "github.com/fmenezes/aoc2021/day2/puzzle2"
+	d1p1 "github.com/fmenezes/aoc2021/internal/day1/puzzle1"
+	d1p2 "github.com/fmenezes/aoc2021/internal/day1/puzzle2"
+	d2p1 "github.com/fmenezes/aoc2021/internal/day2/puzzle1"
+	d2p2 "github.com/fmenezes/aoc2021/internal/day2/puzzle2"
 )
 
 func main() {

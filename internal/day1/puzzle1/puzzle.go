@@ -5,11 +5,11 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/fmenezes/aoc2021/inputs"
+	"github.com/fmenezes/aoc2021/internal"
 )
 
 func Run() error {
-	input, err := inputs.Input(1)
+	input, err := internal.Input(1)
 	if err != nil {
 		return err
 	}
