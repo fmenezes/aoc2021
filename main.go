@@ -29,7 +29,7 @@ func main() {
 	puzzleFunc := listOfPuzzles[sel]
 
 	if puzzleFunc == nil {
-		panic(errors.New("puzzle not found"))
+		log.Panicln(errors.New("puzzle not found"))
 	}
 
 	if err := puzzleFunc(); err != nil {
