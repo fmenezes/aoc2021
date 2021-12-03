@@ -8,6 +8,8 @@ import (
 
 	d1p1 "github.com/fmenezes/aoc2021/day1/puzzle1"
 	d1p2 "github.com/fmenezes/aoc2021/day1/puzzle2"
+	d2p1 "github.com/fmenezes/aoc2021/day2/puzzle1"
+	d2p2 "github.com/fmenezes/aoc2021/day2/puzzle2"
 )
 
 func main() {
@@ -17,10 +19,15 @@ func main() {
 
 	flag.Parse()
 
-	listOfPuzzles := map[string]func() error{"d1p1": d1p1.Run, "d1p2": d1p2.Run}
+	listOfPuzzles := map[string]func() error{
+		"d1p1": d1p1.Run,
+		"d1p2": d1p2.Run,
+		"d2p1": d2p1.Run,
+		"d2p2": d2p2.Run,
+	}
 
 	if day == 0 || puzzle == 0 {
-		day = 1
+		day = 2
 		puzzle = 2
 	}
 
