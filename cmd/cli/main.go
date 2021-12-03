@@ -6,10 +6,8 @@ import (
 	"fmt"
 	"log"
 
-	d1p1 "github.com/fmenezes/aoc2021/internal/day1/puzzle1"
-	d1p2 "github.com/fmenezes/aoc2021/internal/day1/puzzle2"
-	d2p1 "github.com/fmenezes/aoc2021/internal/day2/puzzle1"
-	d2p2 "github.com/fmenezes/aoc2021/internal/day2/puzzle2"
+	"github.com/fmenezes/aoc2021/internal/day1"
+	"github.com/fmenezes/aoc2021/internal/day2"
 )
 
 func main() {
@@ -20,10 +18,10 @@ func main() {
 	flag.Parse()
 
 	listOfPuzzles := map[string]func() error{
-		"d1p1": d1p1.Run,
-		"d1p2": d1p2.Run,
-		"d2p1": d2p1.Run,
-		"d2p2": d2p2.Run,
+		"d1p1": day1.Puzzle1,
+		"d1p2": day1.Puzzle2,
+		"d2p1": day2.Puzzle1,
+		"d2p2": day2.Puzzle2,
 	}
 
 	if day == 0 || puzzle == 0 {

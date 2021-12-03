@@ -1,4 +1,4 @@
-package puzzle1
+package day2
 
 import (
 	"fmt"
@@ -8,7 +8,7 @@ import (
 	"github.com/fmenezes/aoc2021/internal"
 )
 
-func Run() error {
+func Puzzle1() error {
 	input, err := internal.Input(2)
 	if err != nil {
 		return err
