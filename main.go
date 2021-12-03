@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"log"
 
-	d1p1 "github.com/fmenezes/adventofcode2021/day1/puzzle1"
-	d1p2 "github.com/fmenezes/adventofcode2021/day1/puzzle2"
+	d1p1 "github.com/fmenezes/aoc2021/day1/puzzle1"
+	d1p2 "github.com/fmenezes/aoc2021/day1/puzzle2"
 )
 
 func main() {

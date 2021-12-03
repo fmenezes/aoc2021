@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/fmenezes/adventofcode2021/inputs"
+	"github.com/fmenezes/aoc2021/inputs"
 )
 
 func Run() error {
