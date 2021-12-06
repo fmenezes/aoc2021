@@ -1,18 +1,11 @@
 package day1
 
 import (
-	"fmt"
 	"strconv"
 	"strings"
-
-	"github.com/fmenezes/aoc2021/internal"
 )
 
-func Puzzle1() error {
-	input, err := internal.Input(1)
-	if err != nil {
-		return err
-	}
+func Puzzle1(input string) (int, error) {
 	c := 0
 	lines := strings.Split(strings.TrimSpace(input), "\n")
 	for i := 1; i < len(lines); i += 1 {
@@ -20,16 +13,15 @@ func Puzzle1() error {
 		line := lines[i]
 		intLine, err := strconv.Atoi(line)
 		if err != nil {
-			return err
+			return -1, err
 		}
 		intPrevLine, err := strconv.Atoi(prevLine)
 		if err != nil {
-			return err
+			return -1, err
 		}
 		if intLine > intPrevLine {
 			c += 1
 		}
 	}
-	fmt.Println(c)
-	return nil
+	return c, nil
 }

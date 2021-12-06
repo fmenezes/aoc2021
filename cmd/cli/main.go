@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"log"
 
+	"github.com/fmenezes/aoc2021/internal"
 	"github.com/fmenezes/aoc2021/internal/day1"
 	"github.com/fmenezes/aoc2021/internal/day2"
 	"github.com/fmenezes/aoc2021/internal/day3"
@@ -18,7 +19,7 @@ func main() {
 
 	flag.Parse()
 
-	listOfPuzzles := map[string]func() error{
+	listOfPuzzles := map[string]func(string) (int, error){
 		"d1p1": day1.Puzzle1,
 		"d1p2": day1.Puzzle2,
 		"d2p1": day2.Puzzle1,
@@ -40,7 +41,14 @@ func main() {
 		log.Panicln(errors.New("puzzle not found"))
 	}
 
-	if err := puzzleFunc(); err != nil {
+	input, err := internal.Input(day)
+	if err != nil {
 		log.Panicln(err)
 	}
+
+	r, err := puzzleFunc(input)
+	if err != nil {
+		log.Panicln(err)
+	}
+	fmt.Println(r)
 }

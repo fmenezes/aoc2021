@@ -1,13 +1,10 @@
 package day3
 
 import (
-	"fmt"
 	"math"
 	"sort"
 	"strconv"
 	"strings"
-
-	"github.com/fmenezes/aoc2021/internal"
 )
 
 type byBits struct {
@@ -61,11 +58,7 @@ func (v byBits) search(most bool) string {
 	return c.data[0]
 }
 
-func Puzzle2() error {
-	input, err := internal.Input(3)
-	if err != nil {
-		return err
-	}
+func Puzzle2(input string) (int, error) {
 	lines := strings.Split(strings.TrimSpace(input), "\n")
 	sort.Strings(lines)
 	bits := byBits{
@@ -77,14 +70,13 @@ func Puzzle2() error {
 
 	m, err := strconv.ParseInt(most, 2, 0)
 	if err != nil {
-		return err
+		return -1, err
 	}
 
 	l, err := strconv.ParseInt(less, 2, 0)
 	if err != nil {
-		return err
+		return -1, err
 	}
 
-	fmt.Println(m * l)
-	return nil
+	return int(m * l), nil
 }

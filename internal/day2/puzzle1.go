@@ -1,18 +1,11 @@
 package day2
 
 import (
-	"fmt"
 	"strconv"
 	"strings"
-
-	"github.com/fmenezes/aoc2021/internal"
 )
 
-func Puzzle1() error {
-	input, err := internal.Input(2)
-	if err != nil {
-		return err
-	}
+func Puzzle1(input string) (int, error) {
 	horizontal := 0
 	depth := 0
 	lines := strings.Split(strings.TrimSpace(input), "\n")
@@ -21,7 +14,7 @@ func Puzzle1() error {
 		direction, sStep := columns[0], columns[1]
 		step, err := strconv.Atoi(sStep)
 		if err != nil {
-			return err
+			return -1, err
 		}
 		switch direction {
 		case "forward":
@@ -32,6 +25,5 @@ func Puzzle1() error {
 			depth += step
 		}
 	}
-	fmt.Printf("%v\n", horizontal*depth)
-	return nil
+	return horizontal * depth, nil
 }
