@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-func Puzzle1(input string) (int, error) {
+func Puzzle2(input string) (int, error) {
 	lines := strings.Split(strings.TrimSpace(input), "\n")
 	firstLine := strings.Split(lines[0], ",")
 	turns := map[string]int{}
@@ -13,8 +13,8 @@ func Puzzle1(input string) (int, error) {
 		turns[entry] = i
 	}
 	board := 0
-	firstToWinBoard := 0
-	firstToWinBoardTurn := len(firstLine) - 1
+	lastToWinBoard := 0
+	lastToWinBoardTurn := -1
 	turnPerBoard := -1
 	turnPerColumn := []int{-1, -1, -1, -1, -1}
 	for _, line := range lines[2:] {
@@ -24,9 +24,9 @@ func Puzzle1(input string) (int, error) {
 					turnPerBoard = turn
 				}
 			}
-			if turnPerBoard < firstToWinBoardTurn {
-				firstToWinBoard = board
-				firstToWinBoardTurn = turnPerBoard
+			if lastToWinBoardTurn == -1 || turnPerBoard > lastToWinBoardTurn {
+				lastToWinBoard = board
+				lastToWinBoardTurn = turnPerBoard
 			}
 			board += 1
 			turnPerBoard = -1
@@ -52,12 +52,12 @@ func Puzzle1(input string) (int, error) {
 			turnPerBoard = turn
 		}
 	}
-	if turnPerBoard < firstToWinBoardTurn {
-		firstToWinBoard = board
-		firstToWinBoardTurn = turnPerBoard
+	if turnPerBoard > lastToWinBoardTurn {
+		lastToWinBoard = board
+		lastToWinBoardTurn = turnPerBoard
 	}
 
-	l := 2 + (firstToWinBoard * 6)
+	l := 2 + (lastToWinBoard * 6)
 	sumOfUnmarked := 0
 	latestTurn := -1
 	for _, line := range lines[l : l+5] {
@@ -67,10 +67,10 @@ func Puzzle1(input string) (int, error) {
 			if err != nil {
 				return 0, err
 			}
-			if turns[item] == firstToWinBoardTurn {
+			if turns[item] == lastToWinBoardTurn {
 				latestTurn = v
 			}
-			if turns[item] > firstToWinBoardTurn {
+			if turns[item] > lastToWinBoardTurn {
 				sumOfUnmarked += v
 			}
 		}
