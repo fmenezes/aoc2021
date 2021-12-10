@@ -31,11 +31,12 @@ func main() {
 		"d4p1": day4.Puzzle1,
 		"d4p2": day4.Puzzle2,
 		"d5p1": day5.Puzzle1,
+		"d5p2": day5.Puzzle2,
 	}
 
 	if day == 0 || puzzle == 0 {
 		day = 5
-		puzzle = 1
+		puzzle = 2
 	}
 
 	sel := fmt.Sprintf("d%vp%v", day, puzzle)
