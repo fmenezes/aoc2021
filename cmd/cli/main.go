@@ -12,6 +12,7 @@ import (
 	"github.com/fmenezes/aoc2021/internal/day3"
 	"github.com/fmenezes/aoc2021/internal/day4"
 	"github.com/fmenezes/aoc2021/internal/day5"
+	"github.com/fmenezes/aoc2021/internal/day6"
 )
 
 func main() {
@@ -32,11 +33,12 @@ func main() {
 		"d4p2": day4.Puzzle2,
 		"d5p1": day5.Puzzle1,
 		"d5p2": day5.Puzzle2,
+		"d6p1": day6.Puzzle1,
 	}
 
 	if day == 0 || puzzle == 0 {
-		day = 5
-		puzzle = 2
+		day = 6
+		puzzle = 1
 	}
 
 	sel := fmt.Sprintf("d%vp%v", day, puzzle)
