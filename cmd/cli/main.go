@@ -13,6 +13,7 @@ import (
 	"github.com/fmenezes/aoc2021/internal/day4"
 	"github.com/fmenezes/aoc2021/internal/day5"
 	"github.com/fmenezes/aoc2021/internal/day6"
+	"github.com/fmenezes/aoc2021/internal/day7"
 )
 
 func main() {
@@ -35,10 +36,12 @@ func main() {
 		"d5p2": day5.Puzzle2,
 		"d6p1": day6.Puzzle1,
 		"d6p2": day6.Puzzle2,
+		"d7p1": day7.Puzzle1,
+		"d7p2": day7.Puzzle2,
 	}
 
 	if day == 0 || puzzle == 0 {
-		day = 6
+		day = 7
 		puzzle = 2
 	}
 
