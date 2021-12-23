@@ -9,6 +9,7 @@ import (
 	"github.com/fmenezes/aoc2021/internal"
 	"github.com/fmenezes/aoc2021/internal/day1"
 	"github.com/fmenezes/aoc2021/internal/day10"
+	"github.com/fmenezes/aoc2021/internal/day11"
 	"github.com/fmenezes/aoc2021/internal/day2"
 	"github.com/fmenezes/aoc2021/internal/day3"
 	"github.com/fmenezes/aoc2021/internal/day4"
@@ -47,10 +48,12 @@ func main() {
 		"d9p2":  day9.Puzzle2,
 		"d10p1": day10.Puzzle1,
 		"d10p2": day10.Puzzle2,
+		"d11p1": day11.Puzzle1,
+		"d11p2": day11.Puzzle2,
 	}
 
 	if day == 0 || puzzle == 0 {
-		day = 10
+		day = 11
 		puzzle = 2
 	}
 
