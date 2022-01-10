@@ -10,6 +10,7 @@ import (
 	"github.com/fmenezes/aoc2021/internal/day1"
 	"github.com/fmenezes/aoc2021/internal/day10"
 	"github.com/fmenezes/aoc2021/internal/day11"
+	"github.com/fmenezes/aoc2021/internal/day12"
 	"github.com/fmenezes/aoc2021/internal/day2"
 	"github.com/fmenezes/aoc2021/internal/day3"
 	"github.com/fmenezes/aoc2021/internal/day4"
@@ -50,11 +51,12 @@ func main() {
 		"d10p2": day10.Puzzle2,
 		"d11p1": day11.Puzzle1,
 		"d11p2": day11.Puzzle2,
+		"d12p1": day12.Puzzle1,
 	}
 
 	if day == 0 || puzzle == 0 {
-		day = 11
-		puzzle = 2
+		day = 12
+		puzzle = 1
 	}
 
 	sel := fmt.Sprintf("d%vp%v", day, puzzle)
